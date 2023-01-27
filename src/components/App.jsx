@@ -41,7 +41,7 @@ class App extends Component {
           backgroundColor: 'white',
         }}
       >
-        <h2 style={{ textAlign: 'center' }}>Phonebook</h2>
+        <h2 style={{ textAlign: 'center' }}>Phonebook:</h2>
 
         <ContactForm onSubmit={this.onSubmit} contacts={contacts}></ContactForm>
 
