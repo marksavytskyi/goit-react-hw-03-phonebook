@@ -11,22 +11,23 @@ class ContactList extends Component {
     return (
       <>
         <List>
-          {contacts.map(({ number, name, id }) => {
-            const filterCondition = name
-              .toUpperCase()
-              .includes(filter.toUpperCase());
+          {contacts.length > 0 &&
+            contacts.map(({ number, name, id }) => {
+              const filterCondition = name
+                .toUpperCase()
+                .includes(filter.toUpperCase());
 
-            return (
-              filterCondition && (
-                <ContactItem
-                  key={id}
-                  name={name}
-                  number={number}
-                  handleDelete={() => onDelete(id)}
-                ></ContactItem>
-              )
-            );
-          })}
+              return (
+                filterCondition && (
+                  <ContactItem
+                    key={id}
+                    name={name}
+                    number={number}
+                    handleDelete={() => onDelete(id)}
+                  ></ContactItem>
+                )
+              );
+            })}
         </List>
       </>
     );
