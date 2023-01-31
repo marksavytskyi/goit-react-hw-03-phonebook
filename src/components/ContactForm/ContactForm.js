@@ -15,15 +15,15 @@ class ContactForm extends Component {
 
   verifyName = () => {
     const { contacts } = this.props;
+    // const nameCondition = this.verifyName().length > 0;
 
     const theSame = contacts.filter(({ name }) => {
       return name === this.state.name;
     });
 
-    if (theSame.length > 0) {
-      alert(`${this.state.name} is already in contacts.`);
-      return false;
-    } else return true;
+    return theSame.length > 0
+      ? alert(`${this.state.name} is already in contacts.`)
+      : true;
   };
 
   handleSubmit = evt => {
