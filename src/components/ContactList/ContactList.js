@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { List } from './ContactList.styled';
+// import { List } from './ContactList.styled';
 
-import ContactItem from './ContactItem';
+// import ContactItem from './ContactItem';
 
 class ContactList extends Component {
   render() {
-    const { contacts, filter, onDelete } = this.props;
+    // const { contacts, filter, onDelete } = this.props;
 
     return (
       <>
