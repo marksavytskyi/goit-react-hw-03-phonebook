@@ -11,13 +11,11 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log(this.state.contacts);
-
     if (localStorage.contacts) {
       const savedState = localStorage.getItem('contacts');
 
       this.setState({ contacts: JSON.parse(savedState) });
-
+      console.log(this.state.contacts);
       return;
     }
   }
@@ -49,6 +47,7 @@ class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
+    console.log(contacts);
     return (
       <div
         style={{
