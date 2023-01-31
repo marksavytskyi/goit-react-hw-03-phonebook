@@ -15,7 +15,6 @@ class ContactForm extends Component {
 
   verifyName = () => {
     const { contacts } = this.props;
-    // const nameCondition = this.verifyName().length > 0;
 
     const theSame = contacts.filter(({ name }) => {
       return name === this.state.name;

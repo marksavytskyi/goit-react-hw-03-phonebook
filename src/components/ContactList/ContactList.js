@@ -10,27 +10,25 @@ class ContactList extends Component {
     const { contacts, filter, onDelete } = this.props;
 
     return (
-      <>
-        <List>
-          {contacts.length > 0 &&
-            contacts.map(({ number, name, id }) => {
-              const filterCondition = name
-                .toUpperCase()
-                .includes(filter.toUpperCase());
+      <List>
+        {contacts.length > 0 &&
+          contacts.map(({ number, name, id }) => {
+            const filterCondition = name
+              .toUpperCase()
+              .includes(filter.toUpperCase());
 
-              return (
-                filterCondition && (
-                  <ContactItem
-                    key={id}
-                    name={name}
-                    number={number}
-                    handleDelete={() => onDelete(id)}
-                  ></ContactItem>
-                )
-              );
-            })}
-        </List>
-      </>
+            return (
+              filterCondition && (
+                <ContactItem
+                  key={id}
+                  name={name}
+                  number={number}
+                  handleDelete={() => onDelete(id)}
+                ></ContactItem>
+              )
+            );
+          })}
+      </List>
     );
   }
 }
