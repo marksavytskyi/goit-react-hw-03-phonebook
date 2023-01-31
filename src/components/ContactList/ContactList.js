@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import { List } from './ContactList.styled';
+import { List } from './ContactList.styled';
 
-// import ContactItem from './ContactItem';
+import ContactItem from './ContactItem';
 
 class ContactList extends Component {
   render() {
-    // const { contacts, filter, onDelete } = this.props;
+    const { contacts, filter, onDelete } = this.props;
 
     return (
       <>
-        {/* <List>
-          {contacts.length > 0
-            ? contacts.map(({ number, name, id }) => {
-                const filterCondition = name
-                  .toUpperCase()
-                  .includes(filter.toUpperCase());
+        <List>
+          {contacts.length > 0 &&
+            contacts.map(({ number, name, id }) => {
+              const filterCondition = name
+                .toUpperCase()
+                .includes(filter.toUpperCase());
 
-                return (
-                  filterCondition && (
-                    <ContactItem
-                      key={id}
-                      name={name}
-                      number={number}
-                      handleDelete={() => onDelete(id)}
-                    ></ContactItem>
-                  )
-                );
-              })
-            : 'Empty'}
-        </List> */}
+              return (
+                filterCondition && (
+                  <ContactItem
+                    key={id}
+                    name={name}
+                    number={number}
+                    handleDelete={() => onDelete(id)}
+                  ></ContactItem>
+                )
+              );
+            })}
+        </List>
       </>
     );
   }

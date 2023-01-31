@@ -11,9 +11,10 @@ class App extends Component {
   };
 
   onSubmit = contact => {
-    const { contacts } = this.state;
-    this.setState({
-      contacts: [...contacts, contact],
+    this.setState(prevState => {
+      return {
+        contacts: [...prevState.contacts, contact],
+      };
     });
   };
 
