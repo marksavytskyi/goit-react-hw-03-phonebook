@@ -20,9 +20,10 @@ class ContactForm extends Component {
       return name === this.state.name;
     });
 
-    return theSame.length > 0
-      ? alert(`${this.state.name} is already in contacts.`)
-      : true;
+    if (theSame.length > 0) {
+      alert(`${this.state.name} is already in contacts.`);
+      return false;
+    } else return true;
   };
 
   handleSubmit = evt => {
