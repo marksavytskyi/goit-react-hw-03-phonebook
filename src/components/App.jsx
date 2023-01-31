@@ -10,21 +10,21 @@ class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    if (localStorage.contacts) {
-      const savedState = localStorage.getItem('contacts');
+  // componentDidMount() {
+  //   if (localStorage.contacts) {
+  //     const savedState = localStorage.getItem('contacts');
 
-      this.setState({ contacts: JSON.parse(savedState) });
-      console.log(this.state.contacts);
-      return;
-    }
-  }
+  //     this.setState({ contacts: JSON.parse(savedState) });
+  //     console.log(this.state.contacts);
+  //     return;
+  //   }
+  // }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.contacts !== this.state.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.contacts !== this.state.contacts) {
+  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  //   }
+  // }
 
   onSubmit = contact => {
     this.setState(prevState => {
