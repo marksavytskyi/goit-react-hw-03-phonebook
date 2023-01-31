@@ -12,10 +12,17 @@ class App extends Component {
 
   componentDidMount() {
     const savedState = localStorage.getItem('contacts');
+
+    console.log();
+    if (savedState === null) {
+      this.setState({ contacts: [] });
+    }
+
     if (savedState) {
       this.setState({ contacts: JSON.parse(savedState) });
     }
   }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
@@ -23,7 +30,6 @@ class App extends Component {
   }
 
   onSubmit = contact => {
-    console.log(contact);
     this.setState(prevState => {
       return {
         contacts: [...prevState.contacts, contact],
