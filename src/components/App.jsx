@@ -11,15 +11,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const savedState = localStorage.getItem('contacts');
+    console.log(this.state.contacts);
 
-    console.log();
-    if (savedState === null) {
-      this.setState({ contacts: [] });
-    }
+    if (localStorage.contacts) {
+      const savedState = localStorage.getItem('contacts');
 
-    if (savedState) {
       this.setState({ contacts: JSON.parse(savedState) });
+
+      return;
     }
   }
 
