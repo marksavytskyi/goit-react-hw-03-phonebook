@@ -11,7 +11,7 @@ class ContactList extends Component {
 
     return (
       <>
-        <List>
+        {/* <List>
           {contacts.length > 0
             ? contacts.map(({ number, name, id }) => {
                 const filterCondition = name
@@ -30,7 +30,7 @@ class ContactList extends Component {
                 );
               })
             : 'Empty'}
-        </List>
+        </List> */}
       </>
     );
   }
