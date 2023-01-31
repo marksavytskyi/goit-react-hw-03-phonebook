@@ -10,13 +10,13 @@ class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    if (localStorage.contacts) {
-      this.setState({ contacts: JSON.parse(localStorage.getItem('contacts')) });
-    }
-  }
+  // componentDidMount() {
+  //   if (localStorage.contacts) {
+  //     this.setState({ contacts: JSON.parse(localStorage.getItem('contacts')) });
+  //   }
+  // }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }

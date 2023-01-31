@@ -8,12 +8,10 @@ import ContactItem from './ContactItem';
 class ContactList extends Component {
   render() {
     const { contacts, filter, onDelete } = this.props;
-    console.log(contacts);
     return (
       <>
         <List>
           {contacts.map(({ number, name, id }, _, arr) => {
-            console.log(arr);
             const filterCondition = name
               .toUpperCase()
               .includes(filter.toUpperCase());
