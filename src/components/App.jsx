@@ -13,7 +13,7 @@ class App extends Component {
   componentDidMount() {
     const saveContacts = JSON.parse(localStorage.getItem('contacts'));
 
-    if (saveContacts.length) {
+    if (saveContacts?.length) {
       this.setState({ contacts: saveContacts });
     }
   }
@@ -22,7 +22,6 @@ class App extends Component {
     if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
-    console.log(localStorage);
   }
 
   onSubmit = contact => {
@@ -44,7 +43,7 @@ class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
-    console.log(contacts);
+
     return (
       <div
         style={{

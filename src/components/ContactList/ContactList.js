@@ -11,7 +11,7 @@ class ContactList extends Component {
     return (
       <>
         <List>
-          {contacts.map(({ number, name, id }, _, arr) => {
+          {contacts.map(({ number, name, id }) => {
             const filterCondition = name
               .toUpperCase()
               .includes(filter.toUpperCase());
